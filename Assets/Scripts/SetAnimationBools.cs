@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetAnimationBools : MonoBehaviour {
-
-    public string animationBoolName;
-
     public Animator Door;
 
-
-
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider col)
     {
-        Door.SetBool(animationBoolName, true); 
+        Door.SetBool("IsDoorOpen", true); 
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider col)
     {
-        Door.SetBool(animationBoolName, false);
+        Door.SetBool("IsDoorOpen", false);
     }
 }
